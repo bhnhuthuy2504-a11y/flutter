@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'app_appearance_page.dart';
+import 'help_support_page.dart';
 import 'home_management_page.dart';
 import 'my_profile_page.dart';
 import '../widgets/profile_header.dart';
@@ -108,9 +109,12 @@ class _AccountPageState extends State<AccountPage> {
               icon: Icons.insert_chart_outlined_rounded,
               title: 'Data & Analytics',
             ),
-            const SettingsTile(
+            SettingsTile(
               icon: Icons.help_outline_rounded,
               title: 'Help & Support',
+              onTap: () => Navigator.of(context).push(
+                MaterialPageRoute<void>(builder: (_) => const HelpSupportPage()),
+              ),
             ),
             const SizedBox(height: 24),
             _buildLogoutButton(context),
