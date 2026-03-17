@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 ThemeData buildLightTheme() {
   const primaryColor = Color(0xFF2F80ED);
   const background = Color(0xFFFFFFFF);
-  const surface = Color(0xFFF7F7F7);
+  const surface = Color.fromARGB(255, 233, 230, 230);
   const onBackground = Color(0xFF111111);
 
   return ThemeData(
