@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'home_management_page.dart';
 import '../widgets/profile_header.dart';
 import '../widgets/settings_tile.dart';
 
@@ -54,9 +55,14 @@ class _AccountPageState extends State<AccountPage> {
             const SizedBox(height: 24),
             _buildSectionLabel(context, 'General'),
             const SizedBox(height: 8),
-            const SettingsTile(
+            SettingsTile(
               icon: Icons.home_rounded,
               title: 'Home Management',
+              onTap: () => Navigator.of(context).push(
+                MaterialPageRoute<void>(
+                  builder: (_) => const HomeManagementPage(),
+                ),
+              ),
             ),
             const SettingsTile(
               icon: Icons.mic_rounded,
