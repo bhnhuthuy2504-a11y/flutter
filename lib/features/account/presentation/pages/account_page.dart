@@ -6,6 +6,7 @@ import 'home_management_page.dart';
 import 'my_profile_page.dart';
 import '../widgets/profile_header.dart';
 import '../widgets/settings_tile.dart';
+import '../widgets/logout_confirmation_sheet.dart';
 import 'voice_assistants_page.dart';
 
 class AccountPage extends StatefulWidget {
@@ -174,7 +175,15 @@ class _AccountPageState extends State<AccountPage> {
   Widget _buildLogoutButton(BuildContext context) {
     final theme = Theme.of(context);
     return TextButton.icon(
-      onPressed: () {},
+      onPressed: () async {
+        final confirmed = await showLogoutConfirmationSheet(context);
+        if (!context.mounted) return;
+        if (confirmed == true) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Logged out (UI only).')),
+          );
+        }
+      },
       style: TextButton.styleFrom(
         foregroundColor: Colors.redAccent,
         padding: EdgeInsets.zero,
