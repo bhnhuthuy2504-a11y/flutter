@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'app_appearance_page.dart';
 import 'home_management_page.dart';
 import 'my_profile_page.dart';
 import '../widgets/profile_header.dart';
@@ -25,10 +26,7 @@ class _AccountPageState extends State<AccountPage> {
         centerTitle: false,
         title: Row(
           children: [
-            Text(
-              'My Home',
-              style: theme.textTheme.titleLarge,
-            ),
+            Text('My Home', style: theme.textTheme.titleLarge),
             IconButton(
               onPressed: () {},
               icon: const Icon(Icons.keyboard_arrow_down_sharp),
@@ -54,9 +52,7 @@ class _AccountPageState extends State<AccountPage> {
               name: 'Andrew Ainsley',
               email: 'andrew.ainsley@yourdomain.com',
               onTap: () => Navigator.of(context).push(
-                MaterialPageRoute<void>(
-                  builder: (_) => const MyProfilePage(),
-                ),
+                MaterialPageRoute<void>(builder: (_) => const MyProfilePage()),
               ),
             ),
             const SizedBox(height: 24),
@@ -92,9 +88,14 @@ class _AccountPageState extends State<AccountPage> {
               icon: Icons.swap_horiz_rounded,
               title: 'Linked Accounts',
             ),
-            const SettingsTile(
+            SettingsTile(
               icon: Icons.visibility_outlined,
               title: 'App Appearance',
+              onTap: () => Navigator.of(context).push(
+                MaterialPageRoute<void>(
+                  builder: (_) => const AppAppearancePage(),
+                ),
+              ),
             ),
             const SettingsTile(
               icon: Icons.settings_outlined,
@@ -161,7 +162,7 @@ class _AccountPageState extends State<AccountPage> {
             height: 1,
             color: theme.textTheme.labelMedium?.color,
           ),
-        )
+        ),
       ],
     );
   }
@@ -186,5 +187,3 @@ class _AccountPageState extends State<AccountPage> {
     );
   }
 }
-
-
