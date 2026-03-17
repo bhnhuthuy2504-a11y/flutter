@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'home_management_page.dart';
 import '../widgets/profile_header.dart';
 import '../widgets/settings_tile.dart';
+import 'voice_assistants_page.dart';
 
 class AccountPage extends StatefulWidget {
   const AccountPage({super.key});
@@ -64,9 +65,14 @@ class _AccountPageState extends State<AccountPage> {
                 ),
               ),
             ),
-            const SettingsTile(
+            SettingsTile(
               icon: Icons.mic_rounded,
               title: 'Voice Assistants',
+              onTap: () => Navigator.of(context).push(
+                MaterialPageRoute<void>(
+                  builder: (_) => const VoiceAssistantsPage(),
+                ),
+              ),
             ),
             const SettingsTile(
               icon: Icons.notifications_none_rounded,
