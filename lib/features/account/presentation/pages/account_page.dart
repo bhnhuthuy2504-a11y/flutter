@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'home_management_page.dart';
+import 'my_profile_page.dart';
 import '../widgets/profile_header.dart';
 import '../widgets/settings_tile.dart';
 import 'voice_assistants_page.dart';
@@ -49,9 +50,14 @@ class _AccountPageState extends State<AccountPage> {
         child: ListView(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
           children: [
-            const ProfileHeader(
+            ProfileHeader(
               name: 'Andrew Ainsley',
               email: 'andrew.ainsley@yourdomain.com',
+              onTap: () => Navigator.of(context).push(
+                MaterialPageRoute<void>(
+                  builder: (_) => const MyProfilePage(),
+                ),
+              ),
             ),
             const SizedBox(height: 24),
             _buildSectionLabel(context, 'General'),
