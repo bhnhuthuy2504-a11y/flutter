@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'images2code_ui_kit.dart';
+import 'ui_kit.dart';
 
 class HomeMemberDetailsPage extends StatelessWidget {
   const HomeMemberDetailsPage({
@@ -29,10 +29,15 @@ class HomeMemberDetailsPage extends StatelessWidget {
         centerTitle: true,
         title: Text(
           'Home Member',
-          style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w700),
+          style: theme.textTheme.titleLarge?.copyWith(
+            fontWeight: FontWeight.w700,
+          ),
         ),
         actions: [
-          IconButton(icon: const Icon(Icons.more_vert_rounded), onPressed: () {}),
+          IconButton(
+            icon: const Icon(Icons.more_vert_rounded),
+            onPressed: () {},
+          ),
         ],
       ),
       body: SafeArea(
@@ -48,14 +53,28 @@ class HomeMemberDetailsPage extends StatelessWidget {
                     children: [
                       const SizedBox(height: 8),
                       Images2CodeFakeAvatar(
-                        initials: name.split(' ').take(2).map((e) => e[0]).join(),
+                        initials: name
+                            .split(' ')
+                            .take(2)
+                            .map((e) => e[0])
+                            .join(),
                         seed: name.hashCode,
                         radius: 34,
                       ),
                       const SizedBox(height: 14),
-                      Text(name, style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w800)),
+                      Text(
+                        name,
+                        style: theme.textTheme.titleLarge?.copyWith(
+                          fontWeight: FontWeight.w800,
+                        ),
+                      ),
                       const SizedBox(height: 4),
-                      Text(email, style: theme.textTheme.bodyMedium?.copyWith(color: theme.hintColor)),
+                      Text(
+                        email,
+                        style: theme.textTheme.bodyMedium?.copyWith(
+                          color: theme.hintColor,
+                        ),
+                      ),
                       const SizedBox(height: 12),
                       Divider(color: theme.dividerColor.withOpacity(0.45)),
                       ListTile(
@@ -64,7 +83,12 @@ class HomeMemberDetailsPage extends StatelessWidget {
                         trailing: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            Text(role, style: theme.textTheme.bodyMedium?.copyWith(color: theme.hintColor)),
+                            Text(
+                              role,
+                              style: theme.textTheme.bodyMedium?.copyWith(
+                                color: theme.hintColor,
+                              ),
+                            ),
                             const SizedBox(width: 8),
                             const Icon(Icons.chevron_right_rounded),
                           ],
@@ -98,4 +122,3 @@ class HomeMemberDetailsPage extends StatelessWidget {
     );
   }
 }
-

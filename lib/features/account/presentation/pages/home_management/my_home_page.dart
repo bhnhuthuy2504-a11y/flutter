@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'add_member_page.dart';
 import 'home_member_details_page.dart';
 import 'room_management_page.dart';
-import 'images2code_ui_kit.dart';
+import 'ui_kit.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key, this.homeName = 'My Home'});
@@ -23,10 +23,15 @@ class MyHomePage extends StatelessWidget {
         centerTitle: true,
         title: Text(
           homeName,
-          style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w700),
+          style: theme.textTheme.titleLarge?.copyWith(
+            fontWeight: FontWeight.w700,
+          ),
         ),
         actions: [
-          IconButton(icon: const Icon(Icons.more_vert_rounded), onPressed: () {}),
+          IconButton(
+            icon: const Icon(Icons.more_vert_rounded),
+            onPressed: () {},
+          ),
         ],
       ),
       body: SafeArea(
@@ -42,48 +47,86 @@ class MyHomePage extends StatelessWidget {
                     trailing: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Text(homeName, style: theme.textTheme.bodyMedium?.copyWith(color: theme.hintColor)),
+                        Text(
+                          homeName,
+                          style: theme.textTheme.bodyMedium?.copyWith(
+                            color: theme.hintColor,
+                          ),
+                        ),
                         const SizedBox(width: 8),
                         const Icon(Icons.chevron_right_rounded),
                       ],
                     ),
-                    onTap: () => _showEditHomeNameSheet(context, initialValue: homeName),
+                    onTap: () =>
+                        _showEditHomeNameSheet(context, initialValue: homeName),
                   ),
-                  Divider(height: 1, indent: 20, endIndent: 20, color: theme.dividerColor.withOpacity(0.45)),
+                  Divider(
+                    height: 1,
+                    indent: 20,
+                    endIndent: 20,
+                    color: theme.dividerColor.withOpacity(0.45),
+                  ),
                   ListTile(
                     title: const Text('Room Management'),
                     trailing: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Text('6 Room(s)', style: theme.textTheme.bodyMedium?.copyWith(color: theme.hintColor)),
+                        Text(
+                          '6 Room(s)',
+                          style: theme.textTheme.bodyMedium?.copyWith(
+                            color: theme.hintColor,
+                          ),
+                        ),
                         const SizedBox(width: 8),
                         const Icon(Icons.chevron_right_rounded),
                       ],
                     ),
                     onTap: () => Navigator.of(context).push(
-                      MaterialPageRoute<void>(builder: (_) => const RoomManagementPage()),
+                      MaterialPageRoute<void>(
+                        builder: (_) => const RoomManagementPage(),
+                      ),
                     ),
                   ),
-                  Divider(height: 1, indent: 20, endIndent: 20, color: theme.dividerColor.withOpacity(0.45)),
+                  Divider(
+                    height: 1,
+                    indent: 20,
+                    endIndent: 20,
+                    color: theme.dividerColor.withOpacity(0.45),
+                  ),
                   ListTile(
                     title: const Text('Device Management'),
                     trailing: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Text('37 Device(s)', style: theme.textTheme.bodyMedium?.copyWith(color: theme.hintColor)),
+                        Text(
+                          '37 Device(s)',
+                          style: theme.textTheme.bodyMedium?.copyWith(
+                            color: theme.hintColor,
+                          ),
+                        ),
                         const SizedBox(width: 8),
                         const Icon(Icons.chevron_right_rounded),
                       ],
                     ),
                     onTap: () {},
                   ),
-                  Divider(height: 1, indent: 20, endIndent: 20, color: theme.dividerColor.withOpacity(0.45)),
+                  Divider(
+                    height: 1,
+                    indent: 20,
+                    endIndent: 20,
+                    color: theme.dividerColor.withOpacity(0.45),
+                  ),
                   ListTile(
                     title: const Text('Location'),
                     trailing: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Text('701 7th Ave...', style: theme.textTheme.bodyMedium?.copyWith(color: theme.hintColor)),
+                        Text(
+                          '701 7th Ave...',
+                          style: theme.textTheme.bodyMedium?.copyWith(
+                            color: theme.hintColor,
+                          ),
+                        ),
                         const SizedBox(width: 8),
                         const Icon(Icons.chevron_right_rounded),
                       ],
@@ -115,7 +158,12 @@ class MyHomePage extends StatelessWidget {
                           ],
                         ),
                       ),
-                      Divider(height: 1, indent: 20, endIndent: 20, color: theme.dividerColor.withOpacity(0.45)),
+                      Divider(
+                        height: 1,
+                        indent: 20,
+                        endIndent: 20,
+                        color: theme.dividerColor.withOpacity(0.45),
+                      ),
                       _MemberTile(
                         name: 'Andrew Ainsley (You)',
                         email: 'andrew.ainsley@yourdomain.com',
@@ -132,7 +180,12 @@ class MyHomePage extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Divider(height: 1, indent: 20, endIndent: 20, color: theme.dividerColor.withOpacity(0.45)),
+                      Divider(
+                        height: 1,
+                        indent: 20,
+                        endIndent: 20,
+                        color: theme.dividerColor.withOpacity(0.45),
+                      ),
                       _MemberTile(
                         name: 'Jenny Wilson',
                         email: 'jenny.wilson@yourdomain.com',
@@ -148,7 +201,12 @@ class MyHomePage extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Divider(height: 1, indent: 20, endIndent: 20, color: theme.dividerColor.withOpacity(0.45)),
+                      Divider(
+                        height: 1,
+                        indent: 20,
+                        endIndent: 20,
+                        color: theme.dividerColor.withOpacity(0.45),
+                      ),
                       _MemberTile(
                         name: 'Robert Hawkins',
                         email: 'robert.hawkins@yourdomain.com',
@@ -173,7 +231,9 @@ class MyHomePage extends StatelessWidget {
                   child: FloatingActionButton(
                     mini: true,
                     onPressed: () => Navigator.of(context).push(
-                      MaterialPageRoute<void>(builder: (_) => const AddMemberPage()),
+                      MaterialPageRoute<void>(
+                        builder: (_) => const AddMemberPage(),
+                      ),
                     ),
                     child: const Icon(Icons.add_rounded),
                   ),
@@ -224,15 +284,31 @@ class _MemberTile extends StatelessWidget {
     return ListTile(
       onTap: onTap,
       leading: Images2CodeFakeAvatar(
-        initials: name.trim().split(' ').take(2).map((e) => e.isEmpty ? '' : e[0]).join(),
+        initials: name
+            .trim()
+            .split(' ')
+            .take(2)
+            .map((e) => e.isEmpty ? '' : e[0])
+            .join(),
         seed: seed,
       ),
-      title: Text(name, style: theme.textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.w700)),
-      subtitle: Text(email, style: theme.textTheme.bodyMedium?.copyWith(color: theme.hintColor)),
+      title: Text(
+        name,
+        style: theme.textTheme.bodyMedium?.copyWith(
+          fontWeight: FontWeight.w700,
+        ),
+      ),
+      subtitle: Text(
+        email,
+        style: theme.textTheme.bodyMedium?.copyWith(color: theme.hintColor),
+      ),
       trailing: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Text(role, style: theme.textTheme.bodyMedium?.copyWith(color: theme.hintColor)),
+          Text(
+            role,
+            style: theme.textTheme.bodyMedium?.copyWith(color: theme.hintColor),
+          ),
           const SizedBox(width: 8),
           const Icon(Icons.chevron_right_rounded),
         ],
@@ -253,7 +329,7 @@ Future<void> _showEditHomeNameSheet(
     isScrollControlled: true,
     showDragHandle: true,
     useSafeArea: true,
-    backgroundColor: theme.colorScheme.background,
+    backgroundColor: theme.colorScheme.surface,
     shape: const RoundedRectangleBorder(
       borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
     ),
@@ -270,7 +346,9 @@ Future<void> _showEditHomeNameSheet(
           children: [
             Text(
               'Home Name',
-              style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w800),
+              style: theme.textTheme.titleLarge?.copyWith(
+                fontWeight: FontWeight.w800,
+              ),
             ),
             const SizedBox(height: 12),
             Divider(color: theme.dividerColor.withOpacity(0.45)),
@@ -319,7 +397,10 @@ Future<void> _showEditHomeNameSheet(
                     ),
                     child: const Text(
                       'Save',
-                      style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
                   ),
                 ),
@@ -331,4 +412,3 @@ Future<void> _showEditHomeNameSheet(
     },
   );
 }
-

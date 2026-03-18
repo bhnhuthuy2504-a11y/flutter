@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'images2code_ui_kit.dart';
-
 class ContactSupportPage extends StatelessWidget {
   const ContactSupportPage({super.key});
 

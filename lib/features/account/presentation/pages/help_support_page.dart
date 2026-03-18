@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'images2code/contact_support_page.dart';
-import 'images2code/faq_page.dart';
-import 'images2code/privacy_policy_page.dart';
-import 'images2code/terms_of_service_page.dart';
+import 'home_management/contact_support_page.dart';
+import 'home_management/faq_page.dart';
+import 'home_management/privacy_policy_page.dart';
+import 'home_management/terms_of_service_page.dart';
 
 class HelpSupportPage extends StatelessWidget {
   const HelpSupportPage({super.key});
@@ -69,17 +69,23 @@ class HelpSupportPage extends StatelessWidget {
                     break;
                   case 'Contact Support':
                     Navigator.of(context).push(
-                      MaterialPageRoute<void>(builder: (_) => const ContactSupportPage()),
+                      MaterialPageRoute<void>(
+                        builder: (_) => const ContactSupportPage(),
+                      ),
                     );
                     break;
                   case 'Privacy Policy':
                     Navigator.of(context).push(
-                      MaterialPageRoute<void>(builder: (_) => const PrivacyPolicyPage()),
+                      MaterialPageRoute<void>(
+                        builder: (_) => const PrivacyPolicyPage(),
+                      ),
                     );
                     break;
                   case 'Terms of Service':
                     Navigator.of(context).push(
-                      MaterialPageRoute<void>(builder: (_) => const TermsOfServicePage()),
+                      MaterialPageRoute<void>(
+                        builder: (_) => const TermsOfServicePage(),
+                      ),
                     );
                     break;
                   default:
@@ -112,7 +118,7 @@ class _SupportRow extends StatelessWidget {
     final titleStyle = theme.textTheme.bodyMedium?.copyWith(
       fontSize: 16,
       fontWeight: FontWeight.w500,
-      color: theme.colorScheme.onBackground,
+      color: theme.colorScheme.onSurface,
     );
 
     return Material(
@@ -124,11 +130,7 @@ class _SupportRow extends StatelessWidget {
           child: Row(
             children: [
               Expanded(child: Text(title, style: titleStyle)),
-              Icon(
-                Icons.chevron_right_rounded,
-                size: 22,
-                color: trailingColor,
-              ),
+              Icon(Icons.chevron_right_rounded, size: 22, color: trailingColor),
             ],
           ),
         ),
@@ -136,4 +138,3 @@ class _SupportRow extends StatelessWidget {
     );
   }
 }
-

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'join_home_code_page.dart';
-import 'images2code_ui_kit.dart';
+import 'ui_kit.dart';
 
 class JoinHomeQrScannerPage extends StatelessWidget {
   const JoinHomeQrScannerPage({super.key});
@@ -19,7 +19,11 @@ class JoinHomeQrScannerPage extends StatelessWidget {
               child: Container(
                 decoration: const BoxDecoration(
                   gradient: LinearGradient(
-                    colors: [Color(0xFF2B1D1A), Color(0xFF4A2B25), Color(0xFF2B1D1A)],
+                    colors: [
+                      Color(0xFF2B1D1A),
+                      Color(0xFF4A2B25),
+                      Color(0xFF2B1D1A),
+                    ],
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                   ),
@@ -51,7 +55,10 @@ class JoinHomeQrScannerPage extends StatelessWidget {
                   ),
                   const Spacer(),
                   IconButton(
-                    icon: const Icon(Icons.more_vert_rounded, color: Colors.white),
+                    icon: const Icon(
+                      Icons.more_vert_rounded,
+                      color: Colors.white,
+                    ),
                     onPressed: () {},
                   ),
                 ],
@@ -62,27 +69,37 @@ class JoinHomeQrScannerPage extends StatelessWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  _ScannerFrame(
-                    child: const Images2CodeFakeQr(size: 240),
-                  ),
+                  _ScannerFrame(child: const Images2CodeFakeQr(size: 240)),
                   const SizedBox(height: 12),
                   Text(
                     "Can't scan the QR code?",
-                    style: theme.textTheme.bodyMedium?.copyWith(color: Colors.white.withOpacity(0.85)),
+                    style: theme.textTheme.bodyMedium?.copyWith(
+                      color: Colors.white.withOpacity(0.85),
+                    ),
                   ),
                   const SizedBox(height: 10),
                   FilledButton.tonal(
                     onPressed: () => Navigator.of(context).push(
-                      MaterialPageRoute<void>(builder: (_) => const JoinHomeCodePage()),
+                      MaterialPageRoute<void>(
+                        builder: (_) => const JoinHomeCodePage(),
+                      ),
                     ),
                     style: FilledButton.styleFrom(
                       backgroundColor: Colors.white.withOpacity(0.20),
-                      padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 12),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 18,
+                        vertical: 12,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(24),
+                      ),
                     ),
                     child: const Text(
                       'Enter the Invitation Code',
-                      style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                   ),
                 ],
@@ -95,9 +112,15 @@ class JoinHomeQrScannerPage extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    _BottomCircleButton(icon: Icons.photo_outlined, onPressed: () {}),
+                    _BottomCircleButton(
+                      icon: Icons.photo_outlined,
+                      onPressed: () {},
+                    ),
                     _ShutterButton(onPressed: () {}),
-                    _BottomCircleButton(icon: Icons.image_outlined, onPressed: () {}),
+                    _BottomCircleButton(
+                      icon: Icons.image_outlined,
+                      onPressed: () {},
+                    ),
                   ],
                 ),
               ),
@@ -205,11 +228,13 @@ class _ShutterButton extends StatelessWidget {
           child: Container(
             width: 22,
             height: 22,
-            decoration: const BoxDecoration(color: Color(0xFF2F80ED), shape: BoxShape.circle),
+            decoration: const BoxDecoration(
+              color: Color(0xFF2F80ED),
+              shape: BoxShape.circle,
+            ),
           ),
         ),
       ),
     );
   }
 }
-

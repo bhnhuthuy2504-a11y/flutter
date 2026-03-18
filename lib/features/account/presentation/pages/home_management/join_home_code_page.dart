@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'images2code_ui_kit.dart';
+import 'ui_kit.dart';
 
 class JoinHomeCodePage extends StatefulWidget {
   const JoinHomeCodePage({super.key});
@@ -31,10 +31,15 @@ class _JoinHomeCodePageState extends State<JoinHomeCodePage> {
         centerTitle: true,
         title: Text(
           'Join a Home',
-          style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w700),
+          style: theme.textTheme.titleLarge?.copyWith(
+            fontWeight: FontWeight.w700,
+          ),
         ),
         actions: [
-          IconButton(icon: const Icon(Icons.more_vert_rounded), onPressed: () {}),
+          IconButton(
+            icon: const Icon(Icons.more_vert_rounded),
+            onPressed: () {},
+          ),
         ],
       ),
       body: SafeArea(
@@ -54,28 +59,42 @@ class _JoinHomeCodePageState extends State<JoinHomeCodePage> {
                           width: 78,
                           height: 78,
                           decoration: BoxDecoration(
-                            color: theme.colorScheme.background,
+                            color: theme.colorScheme.surface,
                             shape: BoxShape.circle,
-                            border: Border.all(color: theme.dividerColor.withOpacity(0.25)),
+                            border: Border.all(
+                              color: theme.dividerColor.withOpacity(0.25),
+                            ),
                           ),
-                          child: Icon(Icons.home_rounded, size: 38, color: theme.colorScheme.primary),
+                          child: Icon(
+                            Icons.home_rounded,
+                            size: 38,
+                            color: theme.colorScheme.primary,
+                          ),
                         ),
                         const SizedBox(height: 14),
                         Text(
                           'Enter the Invitation Code',
-                          style: theme.textTheme.titleLarge?.copyWith(fontSize: 18, fontWeight: FontWeight.w800),
+                          style: theme.textTheme.titleLarge?.copyWith(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w800,
+                          ),
                           textAlign: TextAlign.center,
                         ),
                         const SizedBox(height: 8),
                         Text(
                           'Please contact the home Administrator to get the invitation code.',
-                          style: theme.textTheme.bodyMedium?.copyWith(color: theme.hintColor),
+                          style: theme.textTheme.bodyMedium?.copyWith(
+                            color: theme.hintColor,
+                          ),
                           textAlign: TextAlign.center,
                         ),
                         const SizedBox(height: 16),
                         Container(
                           width: double.infinity,
-                          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 14,
+                            vertical: 10,
+                          ),
                           decoration: BoxDecoration(
                             color: theme.colorScheme.surface.withOpacity(0.65),
                             borderRadius: BorderRadius.circular(12),
@@ -83,7 +102,9 @@ class _JoinHomeCodePageState extends State<JoinHomeCodePage> {
                           child: TextField(
                             controller: _controller,
                             textAlign: TextAlign.center,
-                            decoration: const InputDecoration(border: InputBorder.none),
+                            decoration: const InputDecoration(
+                              border: InputBorder.none,
+                            ),
                           ),
                         ),
                       ],
@@ -93,7 +114,12 @@ class _JoinHomeCodePageState extends State<JoinHomeCodePage> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(20, 0, 20, 18 + MediaQuery.of(context).viewInsets.bottom),
+              padding: EdgeInsets.fromLTRB(
+                20,
+                0,
+                20,
+                18 + MediaQuery.of(context).viewInsets.bottom,
+              ),
               child: Images2CodePrimaryButton(
                 label: 'Join',
                 onPressed: () async {
@@ -138,7 +164,10 @@ Future<void> _showJoiningDialog(BuildContext context) async {
               const SizedBox(height: 16),
               Text(
                 'Joining the Home...',
-                style: theme.textTheme.bodyMedium?.copyWith(fontSize: 16, fontWeight: FontWeight.w700),
+                style: theme.textTheme.bodyMedium?.copyWith(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w700,
+                ),
               ),
             ],
           ),
@@ -147,4 +176,3 @@ Future<void> _showJoiningDialog(BuildContext context) async {
     },
   );
 }
-

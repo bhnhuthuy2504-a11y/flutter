@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'images2code_ui_kit.dart';
+import 'ui_kit.dart';
 
 class AddMemberPage extends StatefulWidget {
   const AddMemberPage({super.key});

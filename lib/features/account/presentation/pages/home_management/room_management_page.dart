@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'images2code_ui_kit.dart';
+import 'ui_kit.dart';
 import 'manage_rooms_page.dart';
 
 class RoomManagementPage extends StatefulWidget {
@@ -33,7 +33,9 @@ class _RoomManagementPageState extends State<RoomManagementPage> {
         centerTitle: true,
         title: Text(
           'Room Management',
-          style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w700),
+          style: theme.textTheme.titleLarge?.copyWith(
+            fontWeight: FontWeight.w700,
+          ),
         ),
         actions: [
           IconButton(
@@ -75,7 +77,9 @@ class _RoomManagementPageState extends State<RoomManagementPage> {
                 onPressed: () => _showAddRoomSheet(context),
                 style: OutlinedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(vertical: 16),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(28)),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(28),
+                  ),
                   side: BorderSide(width: 2, color: theme.colorScheme.primary),
                   foregroundColor: theme.colorScheme.primary,
                 ),
@@ -112,7 +116,7 @@ Future<void> _showAddRoomSheet(BuildContext context) async {
     isScrollControlled: true,
     showDragHandle: true,
     useSafeArea: true,
-    backgroundColor: theme.colorScheme.background,
+    backgroundColor: theme.colorScheme.surface,
     shape: const RoundedRectangleBorder(
       borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
     ),
@@ -129,7 +133,9 @@ Future<void> _showAddRoomSheet(BuildContext context) async {
           children: [
             Text(
               'Add Room',
-              style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w800),
+              style: theme.textTheme.titleLarge?.copyWith(
+                fontWeight: FontWeight.w800,
+              ),
             ),
             const SizedBox(height: 12),
             Divider(color: theme.dividerColor.withOpacity(0.45)),
@@ -158,7 +164,9 @@ Future<void> _showAddRoomSheet(BuildContext context) async {
                       selected: false,
                       onSelected: (_) => controller.text = c,
                       shape: StadiumBorder(
-                        side: BorderSide(color: theme.dividerColor.withOpacity(0.45)),
+                        side: BorderSide(
+                          color: theme.dividerColor.withOpacity(0.45),
+                        ),
                       ),
                     ),
                 ],
@@ -192,7 +200,8 @@ Future<void> _showAddRoomSheet(BuildContext context) async {
                       Navigator.of(context).pop();
                       showImages2CodeSuccessSheet(
                         context: context,
-                        message: 'Room "${controller.text.trim()}" has been added!',
+                        message:
+                            'Room "${controller.text.trim()}" has been added!',
                       );
                     },
                     style: FilledButton.styleFrom(
@@ -203,7 +212,10 @@ Future<void> _showAddRoomSheet(BuildContext context) async {
                     ),
                     child: const Text(
                       'Save',
-                      style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
                   ),
                 ),
@@ -215,4 +227,3 @@ Future<void> _showAddRoomSheet(BuildContext context) async {
     },
   );
 }
-

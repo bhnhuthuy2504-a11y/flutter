@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'images2code_ui_kit.dart';
+import 'ui_kit.dart';
 
 class CreateHomePage extends StatefulWidget {
   const CreateHomePage({super.key});
@@ -39,10 +39,15 @@ class _CreateHomePageState extends State<CreateHomePage> {
         centerTitle: true,
         title: Text(
           'Create a Home',
-          style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w700),
+          style: theme.textTheme.titleLarge?.copyWith(
+            fontWeight: FontWeight.w700,
+          ),
         ),
         actions: [
-          IconButton(icon: const Icon(Icons.more_vert_rounded), onPressed: () {}),
+          IconButton(
+            icon: const Icon(Icons.more_vert_rounded),
+            onPressed: () {},
+          ),
         ],
       ),
       body: SafeArea(
@@ -59,17 +64,29 @@ class _CreateHomePageState extends State<CreateHomePage> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
-                          Text('Home Name', style: theme.textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.w700)),
+                          Text(
+                            'Home Name',
+                            style: theme.textTheme.bodyMedium?.copyWith(
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
                           const SizedBox(height: 10),
                           Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 14,
+                              vertical: 10,
+                            ),
                             decoration: BoxDecoration(
-                              color: theme.colorScheme.surface.withOpacity(0.65),
+                              color: theme.colorScheme.surface.withOpacity(
+                                0.65,
+                              ),
                               borderRadius: BorderRadius.circular(12),
                             ),
                             child: TextField(
                               controller: _homeNameController,
-                              decoration: const InputDecoration(border: InputBorder.none),
+                              decoration: const InputDecoration(
+                                border: InputBorder.none,
+                              ),
                             ),
                           ),
                           const SizedBox(height: 12),
@@ -107,7 +124,12 @@ class _CreateHomePageState extends State<CreateHomePage> {
                                 ],
                               ),
                             ),
-                            Divider(height: 1, indent: 20, endIndent: 20, color: theme.dividerColor.withOpacity(0.45)),
+                            Divider(
+                              height: 1,
+                              indent: 20,
+                              endIndent: 20,
+                              color: theme.dividerColor.withOpacity(0.45),
+                            ),
                             for (int i = 0; i < _rooms.length; i++) ...[
                               ListTile(
                                 title: Text(_rooms[i].name),
@@ -119,10 +141,16 @@ class _CreateHomePageState extends State<CreateHomePage> {
                                           color: theme.colorScheme.primary,
                                           shape: BoxShape.circle,
                                         ),
-                                        child: const Icon(Icons.check_rounded, color: Colors.white, size: 16),
+                                        child: const Icon(
+                                          Icons.check_rounded,
+                                          color: Colors.white,
+                                          size: 16,
+                                        ),
                                       )
                                     : const SizedBox(width: 26, height: 26),
-                                onTap: () => setState(() => _rooms[i] = _rooms[i].toggle()),
+                                onTap: () => setState(
+                                  () => _rooms[i] = _rooms[i].toggle(),
+                                ),
                               ),
                               if (i < _rooms.length - 1)
                                 Divider(
@@ -154,7 +182,8 @@ class _CreateHomePageState extends State<CreateHomePage> {
                 label: 'Save',
                 onPressed: () => showImages2CodeSuccessSheet(
                   context: context,
-                  message: '"${_homeNameController.text.trim()}" has been created!',
+                  message:
+                      '"${_homeNameController.text.trim()}" has been created!',
                 ),
               ),
             ),
@@ -173,4 +202,3 @@ class _RoomChoice {
 
   _RoomChoice toggle() => _RoomChoice(name, !selected);
 }
-

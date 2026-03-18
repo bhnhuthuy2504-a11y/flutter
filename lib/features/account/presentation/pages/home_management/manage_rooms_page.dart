@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'images2code_ui_kit.dart';
+import 'ui_kit.dart';
 
 class ManageRoomsPage extends StatefulWidget {
   const ManageRoomsPage({super.key});
@@ -33,14 +33,16 @@ class _ManageRoomsPageState extends State<ManageRoomsPage> {
         centerTitle: true,
         title: Text(
           'Manage Rooms',
-          style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w700),
+          style: theme.textTheme.titleLarge?.copyWith(
+            fontWeight: FontWeight.w700,
+          ),
         ),
       ),
       body: SafeArea(
         child: ListView.separated(
           padding: const EdgeInsets.fromLTRB(20, 16, 20, 24),
           itemCount: _rooms.length,
-          separatorBuilder: (_, __) => const SizedBox(height: 14),
+          separatorBuilder: (_, _) => const SizedBox(height: 14),
           itemBuilder: (context, index) {
             return Container(
               height: 62,
@@ -72,10 +74,14 @@ class _ManageRoomsPageState extends State<ManageRoomsPage> {
                       confirmLabel: 'Yes, Delete',
                       onConfirm: () => showImages2CodeSuccessSheet(
                         context: context,
-                        message: 'The Room "${_rooms[index]}" has been successfully deleted!',
+                        message:
+                            'The Room "${_rooms[index]}" has been successfully deleted!',
                       ),
                     ),
-                    icon: const Icon(Icons.delete_outline_rounded, color: Colors.redAccent),
+                    icon: const Icon(
+                      Icons.delete_outline_rounded,
+                      color: Colors.redAccent,
+                    ),
                   ),
                 ],
               ),
@@ -86,4 +92,3 @@ class _ManageRoomsPageState extends State<ManageRoomsPage> {
     );
   }
 }
-

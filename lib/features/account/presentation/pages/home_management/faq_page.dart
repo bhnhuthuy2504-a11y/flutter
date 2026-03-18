@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'images2code_ui_kit.dart';
+import 'ui_kit.dart';
 
 class FaqPage extends StatefulWidget {
   const FaqPage({super.key});
@@ -44,7 +44,12 @@ class _FaqPageState extends State<FaqPage> {
           onPressed: () => Navigator.of(context).pop(),
         ),
         centerTitle: true,
-        title: Text('FAQ', style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w800)),
+        title: Text(
+          'FAQ',
+          style: theme.textTheme.titleLarge?.copyWith(
+            fontWeight: FontWeight.w800,
+          ),
+        ),
       ),
       body: SafeArea(
         child: ListView(
@@ -78,12 +83,16 @@ class _FaqPageState extends State<FaqPage> {
                       selectedColor: theme.colorScheme.primary,
                       labelStyle: TextStyle(
                         fontWeight: FontWeight.w700,
-                        color: _category == c ? Colors.white : theme.colorScheme.onBackground,
+                        color: _category == c
+                            ? Colors.white
+                            : theme.colorScheme.onSurface,
                       ),
                       shape: StadiumBorder(
-                        side: BorderSide(color: theme.dividerColor.withOpacity(0.35)),
+                        side: BorderSide(
+                          color: theme.dividerColor.withOpacity(0.35),
+                        ),
                       ),
-                      backgroundColor: theme.colorScheme.background,
+                      backgroundColor: theme.colorScheme.surface,
                     ),
                     const SizedBox(width: 10),
                   ],
@@ -98,10 +107,18 @@ class _FaqPageState extends State<FaqPage> {
                   data: theme.copyWith(dividerColor: Colors.transparent),
                   child: ExpansionTile(
                     initiallyExpanded: i == _expandedIndex,
-                    onExpansionChanged: (v) => setState(() => _expandedIndex = v ? i : _expandedIndex),
-                    title: Text(items[i].$1, style: theme.textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.w800)),
+                    onExpansionChanged: (v) =>
+                        setState(() => _expandedIndex = v ? i : _expandedIndex),
+                    title: Text(
+                      items[i].$1,
+                      style: theme.textTheme.bodyMedium?.copyWith(
+                        fontWeight: FontWeight.w800,
+                      ),
+                    ),
                     trailing: Icon(
-                      i == _expandedIndex ? Icons.keyboard_arrow_up_rounded : Icons.keyboard_arrow_down_rounded,
+                      i == _expandedIndex
+                          ? Icons.keyboard_arrow_up_rounded
+                          : Icons.keyboard_arrow_down_rounded,
                       color: theme.hintColor,
                     ),
                     childrenPadding: const EdgeInsets.fromLTRB(16, 0, 16, 14),
@@ -109,7 +126,10 @@ class _FaqPageState extends State<FaqPage> {
                       if (items[i].$2.isNotEmpty)
                         Text(
                           items[i].$2,
-                          style: theme.textTheme.bodyMedium?.copyWith(fontSize: 15, height: 1.4),
+                          style: theme.textTheme.bodyMedium?.copyWith(
+                            fontSize: 15,
+                            height: 1.4,
+                          ),
                         ),
                     ],
                   ),
@@ -123,4 +143,3 @@ class _FaqPageState extends State<FaqPage> {
     );
   }
 }
-
