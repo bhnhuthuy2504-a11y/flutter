@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+import 'images2code/create_home_page.dart';
+import 'images2code/join_home_qr_scanner_page.dart';
+import 'images2code/my_home_page.dart';
+
 class HomeManagementPage extends StatelessWidget {
   const HomeManagementPage({super.key});
 
@@ -47,7 +51,9 @@ class HomeManagementPage extends StatelessWidget {
               child: _HomeListCard(
                 homes: _homes,
                 onHomeTap: (name) {
-                  // TODO: Navigate to home detail
+                  Navigator.of(context).push(
+                    MaterialPageRoute<void>(builder: (_) => MyHomePage(homeName: name)),
+                  );
                 },
               ),
             ),
@@ -58,7 +64,9 @@ class HomeManagementPage extends StatelessWidget {
                 children: [
                   FilledButton(
                     onPressed: () {
-                      // TODO: Create a home
+                      Navigator.of(context).push(
+                        MaterialPageRoute<void>(builder: (_) => const CreateHomePage()),
+                      );
                     },
                     style: FilledButton.styleFrom(
                       padding: const EdgeInsets.symmetric(vertical: 16,),
@@ -71,7 +79,9 @@ class HomeManagementPage extends StatelessWidget {
                   const SizedBox(height: 12),
                   OutlinedButton(
                     onPressed: () {
-                      // TODO: Join a home
+                      Navigator.of(context).push(
+                        MaterialPageRoute<void>(builder: (_) => const JoinHomeQrScannerPage()),
+                      );
                     },
                     style: OutlinedButton.styleFrom(
                       padding: const EdgeInsets.symmetric(vertical: 16),

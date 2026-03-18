@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 
+import 'images2code/contact_support_page.dart';
+import 'images2code/faq_page.dart';
+import 'images2code/privacy_policy_page.dart';
+import 'images2code/terms_of_service_page.dart';
+
 class HelpSupportPage extends StatelessWidget {
   const HelpSupportPage({super.key});
 
@@ -55,7 +60,32 @@ class HelpSupportPage extends StatelessWidget {
               title: _items[index],
               trailingColor: trailingColor,
               onTap: () {
-                // UI-only.
+                final title = _items[index];
+                switch (title) {
+                  case 'FAQ':
+                    Navigator.of(context).push(
+                      MaterialPageRoute<void>(builder: (_) => const FaqPage()),
+                    );
+                    break;
+                  case 'Contact Support':
+                    Navigator.of(context).push(
+                      MaterialPageRoute<void>(builder: (_) => const ContactSupportPage()),
+                    );
+                    break;
+                  case 'Privacy Policy':
+                    Navigator.of(context).push(
+                      MaterialPageRoute<void>(builder: (_) => const PrivacyPolicyPage()),
+                    );
+                    break;
+                  case 'Terms of Service':
+                    Navigator.of(context).push(
+                      MaterialPageRoute<void>(builder: (_) => const TermsOfServicePage()),
+                    );
+                    break;
+                  default:
+                    // UI-only for the remaining rows.
+                    break;
+                }
               },
             );
           },
