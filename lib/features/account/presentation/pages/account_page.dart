@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
 import 'app_appearance_page.dart';
+import 'notifications_page.dart';
+import 'account_security_page.dart';
+import 'linked_accounts_page.dart';
+import 'additional_settings_page.dart';
+import 'data_analytics_page.dart';
 import 'help_support_page.dart';
 import 'home_management_page.dart';
 import 'my_profile_page.dart';
@@ -78,17 +83,32 @@ class _AccountPageState extends State<AccountPage> {
                 ),
               ),
             ),
-            const SettingsTile(
+            SettingsTile(
               icon: Icons.notifications_none_rounded,
               title: 'Notifications',
+              onTap: () => Navigator.of(context).push(
+                MaterialPageRoute<void>(
+                  builder: (_) => const NotificationsPage(),
+                ),
+              ),
             ),
-            const SettingsTile(
+            SettingsTile(
               icon: Icons.lock_outline_rounded,
               title: 'Account & Security',
+              onTap: () => Navigator.of(context).push(
+                MaterialPageRoute<void>(
+                  builder: (_) => const AccountSecurityPage(),
+                ),
+              ),
             ),
-            const SettingsTile(
+            SettingsTile(
               icon: Icons.swap_horiz_rounded,
               title: 'Linked Accounts',
+              onTap: () => Navigator.of(context).push(
+                MaterialPageRoute<void>(
+                  builder: (_) => const LinkedAccountsPage(),
+                ),
+              ),
             ),
             SettingsTile(
               icon: Icons.visibility_outlined,
@@ -99,16 +119,26 @@ class _AccountPageState extends State<AccountPage> {
                 ),
               ),
             ),
-            const SettingsTile(
+            SettingsTile(
               icon: Icons.settings_outlined,
               title: 'Additional Settings',
+              onTap: () => Navigator.of(context).push(
+                MaterialPageRoute<void>(
+                  builder: (_) => const AdditionalSettingsPage(),
+                ),
+              ),
             ),
             const SizedBox(height: 24),
             _buildSectionLabel(context, 'Support'),
             const SizedBox(height: 8),
-            const SettingsTile(
+            SettingsTile(
               icon: Icons.insert_chart_outlined_rounded,
               title: 'Data & Analytics',
+              onTap: () => Navigator.of(context).push(
+                MaterialPageRoute<void>(
+                  builder: (_) => const DataAnalyticsPage(),
+                ),
+              ),
             ),
             SettingsTile(
               icon: Icons.help_outline_rounded,
